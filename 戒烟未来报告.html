@@ -1,0 +1,278 @@
+﻿<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>戒烟未来报告</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<style>
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    @keyframes breathe {
+      0% { transform: scale(0.95); opacity: 0.9; }
+      50% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.9; }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-8 flex flex-wrap justify-center gap-8">
+<!-- 页面1：启动页 -->
+<div class="w-[375px] h-[812px] bg-gradient-to-br from-blue-50 to-green-50 border border-gray-200 rounded-xl shadow-lg overflow-hidden relative">
+<div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+<div class="mb-12">
+<iconify-icon class="text-blue-500" height="64" icon="healthicons:no-smoking" width="64"></iconify-icon>
+<h1 class="text-3xl font-bold text-gray-800 mt-4">戒烟未来报告</h1>
+</div>
+<div class="flex-grow flex flex-col items-center justify-center">
+<div class="animate-breathe mb-8">
+<iconify-icon class="text-green-500" height="96" icon="mdi:leaf" width="96"></iconify-icon>
+</div>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">预见更健康的你</h2>
+<p class="text-gray-600 max-w-xs">开启健康旅程，见证戒烟带来的积极变化</p>
+</div>
+<button class="w-full max-w-xs bg-gradient-to-r from-blue-500 to-green-500 text-white font-bold py-4 rounded-full shadow-lg hover:shadow-xl transition-shadow mb-12">
+        开启我的健康报告
+      </button>
+</div>
+</div>
+<!-- 页面2：数据输入页 -->
+<div class="w-[375px] h-[812px] bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden flex flex-col">
+<div class="bg-white p-4 border-b border-gray-200">
+<div class="flex items-center">
+<iconify-icon class="text-gray-600" height="24" icon="mdi:arrow-left" width="24"></iconify-icon>
+<h2 class="text-lg font-bold text-gray-800 flex-grow text-center">填写信息</h2>
+</div>
+<div class="mt-2 text-center text-sm text-blue-500 font-medium">1/2</div>
+</div>
+<div class="flex-grow overflow-y-auto hide-scrollbar p-4 space-y-6">
+<div class="bg-gray-50 rounded-xl p-5">
+<h3 class="font-bold text-gray-800 mb-3">吸烟情况</h3>
+<div class="space-y-3">
+<div class="flex items-center bg-white p-3 rounded-lg border border-gray-200">
+<input checked="" class="h-5 w-5 text-blue-500" name="smokeStatus" type="radio">
+<label class="ml-3 text-gray-700">正在吸烟</label>
+</div>
+<div class="flex items-center bg-white p-3 rounded-lg border border-gray-200">
+<input class="h-5 w-5 text-blue-500" name="smokeStatus" type="radio">
+<label class="ml-3 text-gray-700">已戒烟 <input class="ml-2 w-16 border-b border-gray-300 text-center" placeholder="0" type="number"> 天</label>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 rounded-xl p-5">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-bold text-gray-800">平均每天（支）</h3>
+<span class="text-blue-500 font-bold">15</span>
+</div>
+<input class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" max="40" min="1" type="range" value="15">
+</div>
+<div class="bg-gray-50 rounded-xl p-5">
+<h3 class="font-bold text-gray-800 mb-3">吸烟年限（年）</h3>
+<input class="w-full p-3 bg-white rounded-lg border border-gray-300 text-center" type="number" value="5">
+</div>
+<div class="bg-gray-50 rounded-xl p-5">
+<h3 class="font-bold text-gray-800 mb-3">戒烟目标</h3>
+<select class="w-full p-3 bg-white rounded-lg border border-gray-300">
+<option>完全戒烟</option>
+<option>减少吸烟量</option>
+<option>保持现状</option>
+</select>
+</div>
+</div>
+<div class="p-4 border-t border-gray-200">
+<button class="w-full bg-gradient-to-r from-blue-500 to-green-500 text-white font-bold py-4 rounded-lg shadow">
+        生成报告
+      </button>
+</div>
+</div>
+<!-- 页面3：报告生成页 -->
+<div class="w-[375px] h-[812px] bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden flex flex-col">
+<div class="bg-white p-4 border-b border-gray-200">
+<h2 class="text-lg font-bold text-gray-800 text-center">您的戒烟未来报告</h2>
+<iconify-icon class="absolute right-4 top-4 text-gray-600" height="24" icon="mdi:share" width="24"></iconify-icon>
+</div>
+<div class="flex-grow overflow-y-auto hide-scrollbar">
+<div class="p-6 bg-gradient-to-b from-blue-50 to-white">
+<div class="text-center mb-8">
+<p class="text-gray-600">2025年12月15日</p>
+<h1 class="text-2xl font-bold text-gray-800 mt-2">李明，祝贺您迈出戒烟第一步！</h1>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-white rounded-xl p-4 shadow-sm text-center">
+<div class="text-3xl font-bold text-blue-500 mb-2">￥ 1,850</div>
+<p class="text-gray-600">已节省金额</p>
+</div>
+<div class="bg-white rounded-xl p-4 shadow-sm text-center">
+<div class="text-3xl font-bold text-green-500 mb-2">28</div>
+<p class="text-gray-600">延长寿命天数</p>
+</div>
+</div>
+<div class="bg-white rounded-xl p-5 shadow-sm mb-8">
+<h3 class="font-bold text-gray-800 mb-4">戒烟时间线</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+<iconify-icon class="text-blue-500" height="16" icon="mdi:check" width="16"></iconify-icon>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">第1天</h4>
+<p class="text-gray-600 text-sm">一氧化碳水平恢复正常</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+<iconify-icon class="text-blue-300" height="16" icon="mdi:clock" width="16"></iconify-icon>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">第2周</h4>
+<p class="text-gray-600 text-sm">肺功能开始改善</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+<iconify-icon class="text-blue-300" height="16" icon="mdi:clock" width="16"></iconify-icon>
+</div>
+<div>
+<h4 class="font-bold text-gray-800">第1个月</h4>
+<p class="text-gray-600 text-sm">咳嗽减少，血液循环改善</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-5 shadow-sm mb-8">
+<h3 class="font-bold text-gray-800 mb-4">健康收益对比</h3>
+<div class="h-48" id="healthChart"></div>
+</div>
+<div class="bg-gradient-to-r from-blue-50 to-green-50 rounded-xl p-6 text-center shadow-sm">
+<iconify-icon class="text-yellow-500 mx-auto" height="48" icon="mdi:medal" width="48"></iconify-icon>
+<h3 class="text-xl font-bold text-gray-800 mt-4">戒烟新星勋章</h3>
+<p class="text-gray-600 mt-2">您的每个无烟日都是值得庆祝的胜利！</p>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-gray-200 flex gap-3">
+<button class="flex-grow bg-gradient-to-r from-blue-500 to-green-500 text-white font-bold py-3 rounded-lg">
+        分享报告
+      </button>
+<button class="flex-grow bg-white text-blue-500 font-bold py-3 border border-blue-500 rounded-lg">
+        戒烟计划
+      </button>
+</div>
+</div>
+<!-- 页面4：分享与行动页 -->
+<div class="w-[375px] h-[812px] bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden flex flex-col">
+<div class="bg-white p-4 border-b border-gray-200">
+<h2 class="text-lg font-bold text-gray-800 text-center">下一步行动</h2>
+</div>
+<div class="flex-grow overflow-y-auto hide-scrollbar p-6">
+<div class="text-center mb-8">
+<h3 class="text-xl font-bold text-gray-800 mb-4">分享健康成就</h3>
+<p class="text-gray-600">让更多人了解戒烟带来的积极变化</p>
+</div>
+<div class="bg-gradient-to-br from-blue-50 to-green-50 border-2 border-dashed border-blue-200 rounded-2xl p-8 mb-8">
+<div class="text-center">
+<div class="text-2xl font-bold text-blue-500 mb-2">我的戒烟报告</div>
+<div class="text-4xl font-black text-gray-800 mb-4">7天</div>
+<div class="h-32 relative">
+<img alt="Report summary visualization" class="mx-auto h-full" id="1" src="https://modao.cc/agent-py/media/generated_images/2025-12-15/350da98d233246f7bc98ba218487d1e4.jpg">
+</div>
+<div class="grid grid-cols-2 gap-4 mt-4">
+<div class="text-center">
+<div class="text-lg font-bold text-green-500">￥265</div>
+<div class="text-xs text-gray-600">节省金额</div>
+</div>
+<div class="text-center">
+<div class="text-lg font-bold text-green-500">4天</div>
+<div class="text-xs text-gray-600">延长寿命</div>
+</div>
+</div>
+<div class="mt-6 text-gray-700 text-sm">2025年12月15日 · 戒烟未来报告</div>
+</div>
+</div>
+<h3 class="font-bold text-gray-800 mb-4">分享到</h3>
+<div class="flex justify-center gap-6 mb-8">
+<div class="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center">
+<iconify-icon class="text-green-500" height="32" icon="mdi:wechat" width="32"></iconify-icon>
+</div>
+<div class="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center">
+<iconify-icon class="text-green-500" height="32" icon="mdi:wechat" width="32"></iconify-icon>
+</div>
+<div class="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center">
+<iconify-icon class="text-blue-500" height="32" icon="mdi:qqchat" width="32"></iconify-icon>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="font-bold text-gray-800 mb-4">行动建议</h3>
+<div class="bg-gray-50 rounded-xl p-4 mb-3">
+<div class="flex items-center">
+<iconify-icon class="text-blue-500 mr-3" height="24" icon="mdi:cellphone" width="24"></iconify-icon>
+<span class="text-gray-700">下载戒烟助手APP</span>
+</div>
+</div>
+<div class="bg-gray-50 rounded-xl p-4 mb-3">
+<div class="flex items-center">
+<iconify-icon class="text-green-500 mr-3" height="24" icon="mdi:account-group" width="24"></iconify-icon>
+<span class="text-gray-700">加入戒烟互助社群</span>
+</div>
+</div>
+<div class="bg-gray-50 rounded-xl p-4">
+<div class="flex items-center">
+<iconify-icon class="text-purple-500 mr-3" height="24" icon="mdi:calendar" width="24"></iconify-icon>
+<span class="text-gray-700">设置每日戒烟提醒</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-gray-200">
+<button class="w-full bg-white text-blue-500 font-bold py-3 border border-blue-500 rounded-lg">
+        返回首页
+      </button>
+</div>
+</div>
+<script>
+    // 呼吸动画
+    document.querySelector('.animate-breathe').style.animation = 'breathe 3s infinite';
+    
+    // 健康收益图表
+    setTimeout(() => {
+      const chartDom = document.getElementById('healthChart');
+      if(chartDom) {
+        const chart = echarts.init(chartDom);
+        chart.setOption({
+          grid: { top: 20, bottom: 20, left: 40, right: 20 },
+          tooltip: { trigger: 'axis' },
+          xAxis: {
+            type: 'category',
+            data: ['肺癌风险', '心脏病风险', '呼吸功能', '精力水平']
+          },
+          yAxis: { type: 'value', max: 100 },
+          series: [{
+            name: '戒烟前',
+            type: 'bar',
+            data: [65, 70, 50, 40],
+            itemStyle: { color: '#FF7875' }
+          }, {
+            name: '戒烟后',
+            type: 'bar',
+            data: [35, 30, 75, 85],
+            itemStyle: { color: '#52C41A' }
+          }]
+        });
+      }
+    }, 500);
+    
+    // 交互效果
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.add('scale-95');
+        setTimeout(() => btn.classList.remove('scale-95'), 150);
+      });
+    });
+  </script>
+
+
+</body></html>
